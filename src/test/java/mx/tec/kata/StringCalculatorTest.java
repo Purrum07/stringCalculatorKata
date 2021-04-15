@@ -51,5 +51,18 @@ class StringCalculatorTest {
 		
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void test_givenCalculator_whenAdd_1_Minus2_3_Minus4_5_Minus6_7_Minus8_9_thenException() {
+		String numbers = "1,-2,3,-4,5,-6,7,-8,9";
+		String expectedResult = "negatives not allowed -2, -4, -6, -8";
+		
+		try {
+			sc.add(numbers);
+			fail("Exception not thrown");
+		}catch(UnsupportedOperationException e) {
+			assertEquals(expectedResult, e.getMessage());
+		}
+	}
 
 }
