@@ -5,7 +5,7 @@ public class StringCalculator {
 		if(numbers.isBlank()) {
 			return 0;
 		}else {
-			String[] separatedNumbers = numbers.split(",");
+			String[] separatedNumbers = numbers.split("\\n|,");
 			int result = 0;
 			
 			for(String s : separatedNumbers ) {
